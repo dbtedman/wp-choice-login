@@ -11,7 +11,9 @@ on:
 permissions: "read-all"
 
 jobs:
-    linux:
+    ci:
+        name: "CI (php v${{ matrix.php-version }})"
+
         runs-on: "ubuntu-latest"
 
         strategy:
@@ -28,5 +30,7 @@ jobs:
                     tools: "composer"
             -   name: "Install Composer Dependencies"
                 run: "composer install"
+            -   name: "Run Code Format Checks"
+                run: "composer run lint"
             -   name: "Run Test Suite"
                 run: "composer run test"
