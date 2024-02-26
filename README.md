@@ -4,8 +4,18 @@
 
 Providing login choices for your WordPress site.
 
+- [Supported Platforms](#supported-platforms)
+- [License](#license)
+
+## Supported Platforms
+
 | WordPress | PHP         |
 |-----------|-------------|
-|           | `8.2` `8.3` |
+| `6.4.3`   | `8.2` `8.3` |
 
-> Based on [Supported Versions (php.net)](https://www.php.net/supported-versions.php) listed as having **active support**.
+- WordPress support is based on [Supported Versions (wordpress.org)](https://wordpress.org/documentation/article/supported-versions/).
+- PHP support is based on [Supported Versions (php.net)](https://www.php.net/supported-versions.php).
+
+## License
+
+The [MIT License](./LICENSE.md) is used by this project.
