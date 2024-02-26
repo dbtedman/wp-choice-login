@@ -1,0 +1,5 @@
+# Don't include composer dependencies.
+/vendor/
+
+# Don't include tempoary test directories.
+/.phpunit.cache/
