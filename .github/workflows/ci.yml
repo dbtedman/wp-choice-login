@@ -1,0 +1,32 @@
+name: "ci"
+
+on:
+    pull_request:
+        branches:
+            - "main"
+    push:
+        branches:
+            - "main"
+
+permissions: "read-all"
+
+jobs:
+    linux:
+        runs-on: "ubuntu-latest"
+
+        strategy:
+            matrix:
+                php-version: [ "8.2", "8.3" ]
+
+        steps:
+            -   name: "Checkout Code"
+                uses: "actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11"
+            -   name: "Setup PHP"
+                uses: "shivammathur/setup-php@6d7209f44a25a59e904b1ee9f3b0c33ab2cd888d"
+                with:
+                    php-version: "${{ matrix.php-version }}"
+                    tools: "composer"
+            -   name: "Install Composer Dependencies"
+                run: "composer install"
+            -   name: "Run Test Suite"
+                run: "composer run test"
