@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 wp core install \
-  --url="http://localhost:8000" \
+  --url="${WP_SITEURL}" \
   --title="WP Choice Login" \
   --admin_user="choice" \
   --admin_email="choice@example.com" \

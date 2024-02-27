@@ -12,7 +12,7 @@ FROM php:8.2.16-apache-bookworm
 
 WORKDIR /tmp
 
-ENV WP_VERSION "6.4.3"
+ARG WORDPRESS_VERSION
 
 RUN apt-get update \
     && apt-get install -y \
@@ -31,10 +31,10 @@ RUN apt-get update \
       expires \
       mpm_prefork \
       headers \
-    && curl "https://wordpress.org/wordpress-${WP_VERSION}.zip" \
-        -o wordpress-${WP_VERSION}.zip \
-    && unzip -q wordpress-${WP_VERSION}.zip \
-    && rm wordpress-${WP_VERSION}.zip \
+    && curl "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.zip" \
+        -o wordpress-${WORDPRESS_VERSION}.zip \
+    && unzip -q wordpress-${WORDPRESS_VERSION}.zip \
+    && rm wordpress-${WORDPRESS_VERSION}.zip \
     && mv ./wordpress/* /var/www/html/ \
     && chown -R www-data:www-data /var/www/html/ \
     && rm -rf /var/www/html/wp-content/plugins/akismet/ \

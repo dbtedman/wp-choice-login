@@ -3,10 +3,12 @@ services:
     web:
         container_name: "wp_choice_login_web"
         build:
+            args:
+                WORDPRESS_VERSION: "${WORDPRESS_VERSION}"
             context: "."
         restart: "always"
         ports:
-            - "8000:80"
+            - "${WEB_PORT}:80"
         depends_on:
             db:
                 condition: "service_healthy"
@@ -17,7 +19,7 @@ services:
             DB_NAME: "wp_choice_login"
             DB_PASSWORD: "wp_choice_login"
             DB_USER: "wp_choice_login"
-            WP_SITEURL: "http://localhost:8000/"
+            WP_SITEURL: "http://localhost:${WEB_PORT}/"
         volumes:
             - "./docker/wp-config.php:/var/www/html/wp-config.php"
             - "./plugin.php:/var/www/html/wp-content/plugins/wp-choice-login/plugin.php"
