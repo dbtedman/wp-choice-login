@@ -28,9 +28,9 @@ jobs:
                 with:
                     php-version: "${{ matrix.php-version }}"
                     tools: "composer"
-            -   name: "Install Composer Dependencies"
-                run: "composer install"
+            -   name: "Install Dependencies"
+                run: "make install"
             -   name: "Run Code Format Checks"
-                run: "composer run lint"
+                run: "make lint"
             -   name: "Run Test Suite"
-                run: "composer run test"
+                run: "make test"

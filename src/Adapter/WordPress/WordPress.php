@@ -29,4 +29,6 @@ interface WordPress
         string|null $iconURL,
         int|null $position
     ): void;
+
+    public function adminURL(string $url): string;
 }

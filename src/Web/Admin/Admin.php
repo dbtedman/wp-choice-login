@@ -6,7 +6,7 @@ namespace DBTedman\WPChoiceLogin\Web\Admin;
 
 use DBTedman\WPChoiceLogin\Adapter\WordPress\WordPress;
 
-class Admin
+readonly class Admin
 {
     private const PAGE_TITLE = 'WordPress Choice Login Settings';
     private const MENU_TITLE = 'Choice Login';
@@ -41,7 +41,7 @@ class Admin
     private function renderHTML(): string
     {
         $pageTitle = self::PAGE_TITLE;
-        $submitURL = ''; // TODO:
+        $submitURL = $this->wp->adminURL('admin-post.php');
 
         return <<<EOF
 <div class="wrap">

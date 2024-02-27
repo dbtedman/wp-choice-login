@@ -35,4 +35,9 @@ readonly class WordPressImpl implements WordPress
     ): void {
         add_menu_page($pageTitle, $menuTitle, $requiredCapability, $menuSlug, $callable, $iconURL, $position);
     }
+
+    public function adminURL(string $url): string
+    {
+        return admin_url($url);
+    }
 }
