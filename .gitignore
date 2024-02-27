@@ -3,3 +3,6 @@
 
 # Don't include tempoary test directories.
 /.phpunit.cache/
+
+# Don't include WordPress source code.
+/wordpress/
