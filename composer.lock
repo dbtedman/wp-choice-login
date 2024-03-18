@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b890729fb58d9e832bf6fa08611bf9c",
+    "content-hash": "980ce5969474532b92d50e85fa8d2442",
     "packages": [],
     "packages-dev": [
         {
@@ -60,7 +60,7 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.7",
+            "version": "1.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
